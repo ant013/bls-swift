@@ -8,7 +8,6 @@
 
 #import "BLSInterface.h"
 
-#define BLS_ETH 1
 #import <bls_framework/bn_c384_256.h>
 #import <bls_framework/bls.h>
 
