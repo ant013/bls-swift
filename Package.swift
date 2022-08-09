@@ -25,7 +25,7 @@ let package = Package(
     .binaryTarget(
        name: "bls_framework",
        url: "https://github.com/ant013/bls-swift/releases/download/1.0.1/bls_framework.xcframework.zip",
-       checksum: "3101d783f00cf448aaa2733f41d34e39a0987a4da650236d5c9531e03f6f4819"
+       checksum: "152ffef41d29814acaa3ed9fbea1155cb454762c116b327c4251e922fa7210da"
     )
   ]
 )
