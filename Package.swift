@@ -18,8 +18,7 @@ let package = Package(
       dependencies: ["bls_framework"],
       path: "bls_framework/Sources",
       exclude: [
-        "bls",
-        "mcl"
+        "bls"
       ]
     ),
     .binaryTarget(

@@ -6,13 +6,9 @@ XCFRAMEWORKZIP_NAME=${PROJECT_NAME}.xcframework.zip
 SCRIPT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
 BUILD_PATH=`dirname $SCRIPT`
 
-echo "Preparing mcl..."
-echo "Applying patch"
-$(cd Sources/mcl && git reset --hard && git apply ../../patches/mcl.patch.diff)
-
 echo "Preparing bls..."
 echo "Applying patch"
-$(cd Sources/bls && git reset --hard && git apply ../../patches/bls.patch.diff)
+$(cd Sources/bls && git reset --hard)
 
 BUILD_MATRIX_WIDTH=5
 buildmatrix=()
@@ -79,12 +75,6 @@ while [ $i -lt ${count} ]
     
     i=$[$i+1]
 done
-
-echo "Reverting mcl..."
-$(cd Sources/mcl && git reset --hard)
-
-echo "Reverting bls..."
-$(cd Sources/bls && git reset --hard)
 
 rm -r ${XCFRAMEWORK_NAME}
 xcodebuild -create-xcframework ${FRAMEWORKS} -output ${XCFRAMEWORK_NAME}
